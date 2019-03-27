@@ -1,4 +1,3 @@
-
 using System;
 using System.Linq;
 using System.Collections;
@@ -8,7 +7,6 @@ namespace PaymentContext.Domain.Entities
 {
     public class Subscription
     {
-        
         protected Subscription() { }
         public bool Active { get; private set; }
         public DateTime CreateDate { get; private set; }
@@ -23,19 +21,26 @@ namespace PaymentContext.Domain.Entities
             }
         }
 
+        public Payment AddPayment(Payment payment)
+        {
+            if (!this.Payments.Any(x => x.PaymentIdentifier == payment.PaymentIdentifier))
+            {
+                this._payments.Add(payment);
+                return payment;
+            }
+            return null;
+        }
         public Subscription(bool active = true)
         {
             this.Active = active;
             this.CreateDate = DateTime.Now;
             this._payments = new List<Payment>();
         }
-
         public void DisableSubscription()
         {
             this.Active = false;
             this.LasUpdateDate = DateTime.Now;
         }
-
         public void SetExpirationDate(DateTime date)
         {
             this.ExpirationDate = date;
