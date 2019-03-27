@@ -6,17 +6,17 @@ namespace PaymentContext.Domain.Entities
 {
     public class BoletoPayment : Payment
     {
-        protected BoletoPayment() { }
         public String Barcode { get; private set; }
         public Guid BoletoNumber { get; private set; }
 
-        public BoletoPayment(String barcode, Guid boletoNumber)
+        public BoletoPayment(String barcode, Guid boletoNumber,
+        DateTime paidDate, DateTime? lastUpdate, DateTime expireDate, 
+        decimal total, decimal totalPaid, string address, 
+        string document, string owner, string email)
+        :base(paidDate, lastUpdate,  expireDate,total,  totalPaid,  address,document,  owner, email)
         {
             this.Barcode = barcode;
             this.BoletoNumber = boletoNumber;
-
-            this.PaidDate = DateTime.Now;
-            this.LastUpdate = DateTime.Now;
         }
 
     }

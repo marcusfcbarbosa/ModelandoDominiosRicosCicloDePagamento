@@ -6,13 +6,18 @@ namespace PaymentContext.Domain.Entities
 {
     public class PayPalPayment : Payment
     {
-        protected PayPalPayment() { }
+        
         public string LastTranscationCode { get; private set; }
-        public PayPalPayment(string lastTranscationCode)
+        public PayPalPayment(string lastTranscationCode,
+        
+        DateTime paidDate, DateTime? lastUpdate, DateTime expireDate, 
+        decimal total, decimal totalPaid, string address, 
+        string document, string owner, string email)
+        :base(paidDate, lastUpdate,  expireDate, 
+         total,  totalPaid,  address, 
+         document,  owner, email)
         {
             this.LastTranscationCode = lastTranscationCode;
-            this.PaidDate = DateTime.Now;
-            this.LastUpdate = DateTime.Now;
         }
     }
 }

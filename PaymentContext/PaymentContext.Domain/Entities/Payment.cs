@@ -6,7 +6,7 @@ namespace PaymentContext.Domain.Entities
 {
     public abstract class Payment
     {
-        protected Payment( DateTime paidDate, DateTime? lastUpdate, DateTime expireDate, 
+        public Payment(DateTime paidDate, DateTime? lastUpdate, DateTime expireDate, 
         decimal total, decimal totalPaid, string address, 
         string document, string owner, string email)
         {

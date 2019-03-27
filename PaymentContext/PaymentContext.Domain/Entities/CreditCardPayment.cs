@@ -6,19 +6,20 @@ namespace PaymentContext.Domain.Entities
 {
     public class CreditCardPayment : Payment
     {
-        protected CreditCardPayment() { }
         public string CardHolderName { get; private set; }
         public string CardNumber { get; private set; }
         public string LastTransactionNumber { get; private set; }
-        public CreditCardPayment(string cardHolderName,
-        string cardNumber, string lastTransactionNumber)
+        public CreditCardPayment(string cardHolderName,string cardNumber, string lastTransactionNumber,
+        DateTime paidDate, DateTime? lastUpdate, DateTime expireDate, 
+        decimal total, decimal totalPaid, string address, 
+        string document, string owner, string email)
+        :base(paidDate, lastUpdate,  expireDate, 
+         total,  totalPaid,  address, 
+         document,  owner, email)
         {
             this.CardHolderName = cardHolderName;
             this.CardNumber = cardNumber;
             this.LastTransactionNumber = lastTransactionNumber;
-
-            this.PaidDate = DateTime.Now;
-            this.LastUpdate = DateTime.Now;
         }
     }
 
