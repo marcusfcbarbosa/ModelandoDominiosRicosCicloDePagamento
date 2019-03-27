@@ -1,3 +1,24 @@
 Modelando Dominios Ricos
 
 .net Core
+
+1- criar uma solution .net Core
+dotnet new sln
+
+2- criar um novo projeto
+dotnet new classlib
+
+3- criar um projeto de teste
+dotnet new mstest
+
+4- adicionar a referencia de projetos a solution
+dotnet sln add (caminho do .csproj)
+
+5- Restaurar todos os pacotes
+dotnet restore
+
+6- Compliar a solution
+dotnet build
+
+7- adicionar uma referencia de projeto para outro
+dotnet add reference (caminho do .csproj do outro projeto)
