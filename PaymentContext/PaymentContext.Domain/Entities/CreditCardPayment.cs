@@ -6,9 +6,6 @@ namespace PaymentContext.Domain.Entities
 {
     public class CreditCardPayment : Payment
     {
-
-        
-
         public string CardHolderName { get; private set; }
         public string CardNumber { get; private set; }
         public string LastTransactionNumber { get; private set; }
@@ -16,7 +13,7 @@ namespace PaymentContext.Domain.Entities
 
             DateTime paidDate, DateTime? lastUpdate,
             DateTime expireDate, decimal total, decimal totalPaid,
-            Address address, string document, string owner, string email)
+            Address address, Document document, string owner, string email)
         :base(paidDate, lastUpdate,  expireDate, 
          total,  totalPaid,  address, 
          document,  owner, email)

@@ -9,7 +9,7 @@ namespace PaymentContext.Domain.Entities
     {
         protected Payment(DateTime paidDate, DateTime? lastUpdate, 
         DateTime expireDate, decimal total, decimal totalPaid,
-         Address address, string document, string owner, string email)
+         Address address, Document document, string owner, string email)
         {
             PaymentIdentifier = Guid.NewGuid();
             PaidDate = paidDate;
@@ -22,11 +22,10 @@ namespace PaymentContext.Domain.Entities
                  neighborhood:address.Neighborhood, city:address.City,
                  state:address.State, country:address.Country, zipCode:address.ZipCode);
 
-            Document = document;
+            Document = new Document(document.Number,document.Type);
             Owner = owner;
             Email = email;
         }
-
         public Guid PaymentIdentifier { get; private  set; }
         public DateTime PaidDate { get;  private set; }
         public DateTime? LastUpdate { get; private set; }
@@ -34,7 +33,7 @@ namespace PaymentContext.Domain.Entities
         public Decimal Total { get;  private set; }
         public Decimal TotalPaid { get; private set; }
         public Address Address { get; private set; }
-        public string Document { get; private set; }
+        public Document Document { get; private set; }
         public string Owner { get; private set; }
         public string Email { get; private set; }
     }
