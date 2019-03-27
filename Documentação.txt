@@ -22,3 +22,14 @@ dotnet build
 
 7- adicionar uma referencia de projeto para outro
 dotnet add reference (caminho do .csproj do outro projeto)
+=====================
+SOLID, OPEN CLOSE PRINCIPLE
+ public class Student
+    {
+        protected Student() { 
+            this.Subscriptions = new List<Subscription>();
+        }
+	public String FirstName { get; private set; }
+	public String LastName { get; private set; }
+	public String Document { get; private set; }
+	public String Email { get; private set; }
