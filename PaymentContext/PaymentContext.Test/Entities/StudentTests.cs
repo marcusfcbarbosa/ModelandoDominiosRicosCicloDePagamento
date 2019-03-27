@@ -9,10 +9,10 @@ namespace PaymentContext.Test.Entities
         [TestMethod]
         public void TestMethod1()
         {
-            var student = new Student(firstName: "Marcos", 
-            lastName: "Correa", 
-            document: "78989898798", 
-            email: "sdfdfsfsfd@hotmail.com");
+            // var student = new Student(firstName: "Marcos", 
+            // lastName: "Correa", 
+            // document: "78989898798", 
+            // email: "sdfdfsfsfd@hotmail.com");
         }
     }
 }
