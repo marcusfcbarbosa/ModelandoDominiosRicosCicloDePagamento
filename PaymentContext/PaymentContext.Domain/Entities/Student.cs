@@ -20,15 +20,16 @@ namespace PaymentContext.Domain.Entities
                 Address address)
         {
             Name = name;
-            Document = new Document(document.Number,document.Type);
+            Document = document;
             Email = email;
+            Address = address;
+            AddNotifications(name, document, email,address);
+
             CreationDate = creationDate;
             Status = status;
-            Address = new Address(
-                 street:address.Street, number:address.Number,
-                 neighborhood:address.Neighborhood, city:address.City,
-                 state:address.State, country:address.Country, zipCode:address.ZipCode);
+            
             _subscriptions = new List<Subscription>();
+
         }
 
         public Name Name { get; private set; }
@@ -46,7 +47,7 @@ namespace PaymentContext.Domain.Entities
                 return this._subscriptions.ToArray();
             }
         }
-        
+
 
         public void AddSubscription(Subscription subscription)
         {

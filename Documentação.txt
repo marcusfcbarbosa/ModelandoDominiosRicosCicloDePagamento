@@ -22,6 +22,10 @@ dotnet build
 
 7- adicionar uma referencia de projeto para outro
 dotnet add reference (caminho do .csproj do outro projeto)
+
+8- install-package no .netcore
+dotnet add package (nome do pacote)
+
 =====================
 SOLID, OPEN CLOSE PRINCIPLE
  public class Student
