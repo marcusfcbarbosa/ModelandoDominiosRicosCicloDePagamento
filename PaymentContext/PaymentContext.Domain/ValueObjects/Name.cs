@@ -18,7 +18,7 @@ namespace PaymentContext.Domain.ValueObjects
 
             AddNotifications(new Contract()
                 .Requires()
-                .IsNullOrEmpty(FirstName, "Name.LastName", "Sobrenome não esta preenchido")
+                .IsNullOrEmpty(LastName, "Name.LastName", "Sobrenome não esta preenchido")
             );
 
             AddNotifications(new Contract()

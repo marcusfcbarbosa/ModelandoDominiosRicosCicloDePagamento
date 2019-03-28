@@ -1,6 +1,10 @@
+using System;
+using PaymentContext.Domain.ValueObjects.Enums;
+using PaymentContext.Shared.Commands;
+
 namespace PaymentContext.Domain.Commands
 {
-    public class CreatePayPalSubscriptionCommand
+    public class CreateCreditCardSubscriptionComand
     {
         // Value Objects
         public String FirstName { get; set; }
@@ -9,10 +13,12 @@ namespace PaymentContext.Domain.Commands
         public String Email { get; set; }
         // Value Objects
 
-        // Especifico do PayPal
-        public string TranscationCode { get; set; }
+        //Especifico do CrediCard
+        public string CardHolderName { get;  set; }
+        public string CardNumber { get;  set; }
+        public string LastTransactionNumber { get;  set; }
+        //Especifico do CrediCard
 
-        // Especifico do PayPal
         public String Number { get; set; }
         public DateTime PaidDate { get; set; }
         public DateTime? LastUpdate { get; set; }
@@ -31,7 +37,7 @@ namespace PaymentContext.Domain.Commands
 
         // Propriedades do Address
         public String Street { get; set; }
-        public String Number { get; set; }
+        public String PayerAddressNumber { get; set; }
         public String Neighborhood { get; set; }
         public String City { get; set; }
         public String State { get; set; }
