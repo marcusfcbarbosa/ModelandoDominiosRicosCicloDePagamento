@@ -20,19 +20,17 @@ namespace PaymentContext.Domain.ValueObjects
                             .Requires()
                             .HasLen(number, 14, "Document.Number", "Cnpj deve possuir 14 caracteres")
                     );
-
                     AddNotifications(new Contract()
                             .Requires()
                             .IsTrue(IsCnpj(number), "Document.Number", "CNPJ Inválido")
                     );
                     break;
+
                 case EnumDocumentType.Cpf:
-                    
                     AddNotifications(new Contract()
                             .Requires()
                             .HasLen(number, 11, "Document.Number", "CPF deve possuir 11 caracteres")
                     );
-                    
                     AddNotifications(new Contract()
                             .Requires()
                             .IsTrue(IsCpf(number), "Document.Number", "CPF Inválido")

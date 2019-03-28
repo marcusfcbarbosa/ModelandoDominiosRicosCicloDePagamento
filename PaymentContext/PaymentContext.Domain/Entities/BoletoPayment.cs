@@ -11,10 +11,13 @@ namespace PaymentContext.Domain.Entities
         public Guid BoletoNumber { get; private set; }
         public BoletoPayment(String barcode, Guid boletoNumber,
 
-        DateTime paidDate, DateTime? lastUpdate,
-            DateTime expireDate, decimal total, decimal totalPaid,
-            Address address, Document document, string owner, string email)
-        :base(paidDate, lastUpdate,  expireDate,total,  totalPaid,  address,document,  owner, email)
+                    DateTime paidDate, DateTime? lastUpdate,
+                    DateTime expireDate, decimal total, decimal totalPaid,
+                    Address address, Document document, string owner, Email email)
+                    : base(paidDate, lastUpdate, expireDate,
+             total, totalPaid, address,
+            document, owner, email)
+
         {
             this.Barcode = barcode;
             this.BoletoNumber = boletoNumber;

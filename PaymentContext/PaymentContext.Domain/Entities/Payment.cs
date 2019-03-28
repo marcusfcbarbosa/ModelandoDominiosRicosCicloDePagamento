@@ -11,7 +11,7 @@ namespace PaymentContext.Domain.Entities
     {
         protected Payment(DateTime paidDate, DateTime? lastUpdate,
         DateTime expireDate, decimal total, decimal totalPaid,
-         Address address, Document document, string owner, string email)
+         Address address, Document document, string owner, Email email)
         {
             PaymentIdentifier = Guid.NewGuid();
             PaidDate = paidDate;
@@ -19,21 +19,16 @@ namespace PaymentContext.Domain.Entities
             ExpireDate = expireDate;
             Total = total;
             TotalPaid = totalPaid;
-            Address = new Address(
-                 street: address.Street, number: address.Number,
-                 neighborhood: address.Neighborhood, city: address.City,
-                 state: address.State, country: address.Country, zipCode: address.ZipCode);
-
-            Document = new Document(document.Number, document.Type);
             Owner = owner;
             Email = email;
-
+            AddNotifications(address,document,email);
             AddNotifications(new Contract()
                     .Requires()
                     .IsGreaterThan(0, Total, "Payment.Total", "Pagamento total não pode ser ZERO")
                     .IsGreaterOrEqualsThan(Total, TotalPaid, "Payment.TotalPaid", "O valor pago é menor que o valor do pagamento")
             );
         }
+        
         public Guid PaymentIdentifier { get; private set; }
         public DateTime PaidDate { get; private set; }
         public DateTime? LastUpdate { get; private set; }
@@ -43,6 +38,6 @@ namespace PaymentContext.Domain.Entities
         public Address Address { get; private set; }
         public Document Document { get; private set; }
         public string Owner { get; private set; }
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
     }
 }

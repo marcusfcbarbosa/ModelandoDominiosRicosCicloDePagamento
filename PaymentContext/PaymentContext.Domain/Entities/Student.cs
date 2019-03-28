@@ -16,18 +16,16 @@ namespace PaymentContext.Domain.Entities
                 Name name,
                 Document document,
                 Email email,
-                DateTime creationDate,
-                bool status,
                 Address address)
         {
+            AddNotifications(name, document, email, address);
+
             Name = name;
             Document = document;
             Email = email;
             Address = address;
-            AddNotifications(name, document, email, address);
-
-            CreationDate = creationDate;
-            Status = status;
+            CreationDate = DateTime.Now;
+            Status = true;
             _subscriptions = new List<Subscription>();
         }
 
