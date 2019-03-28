@@ -32,6 +32,7 @@ namespace PaymentContext.Domain.ValueObjects
                             .Requires()
                             .HasLen(number, 11, "Document.Number", "CPF deve possuir 11 caracteres")
                     );
+                    
                     AddNotifications(new Contract()
                             .Requires()
                             .IsTrue(IsCpf(number), "Document.Number", "CPF Inválido")

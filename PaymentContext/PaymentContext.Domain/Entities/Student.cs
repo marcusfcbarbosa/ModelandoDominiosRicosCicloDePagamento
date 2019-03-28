@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using PaymentContext.Domain.ValueObjects;
 using PaymentContext.Domain.ValueObjects.Enums;
 using PaymentContext.Shared.Entities;
+using Flunt.Validations;
 
 namespace PaymentContext.Domain.Entities
 {
@@ -23,13 +24,11 @@ namespace PaymentContext.Domain.Entities
             Document = document;
             Email = email;
             Address = address;
-            AddNotifications(name, document, email,address);
+            AddNotifications(name, document, email, address);
 
             CreationDate = creationDate;
             Status = status;
-            
             _subscriptions = new List<Subscription>();
-
         }
 
         public Name Name { get; private set; }
@@ -49,11 +48,25 @@ namespace PaymentContext.Domain.Entities
         }
         public void AddSubscription(Subscription subscription)
         {
-            this.Subscriptions.ToList().ForEach(item =>
-                {
-                    item.DisableSubscription();
-                });
-            this._subscriptions.Add(subscription);
+            //Um tipo de validação
+            // this.Subscriptions.ToList().ForEach(item =>
+            //     {
+            //         item.DisableSubscription();
+            //     });
+            // this._subscriptions.Add(subscription);
+
+            //Outro tipo de validação
+            var hasSubscriptionActive = false;
+            if (this.Subscriptions.ToList().Any(x => x.Active))
+            {
+                hasSubscriptionActive = true;
+            }
+            AddNotifications(new Contract()
+                    .Requires()
+                    .IsFalse(hasSubscriptionActive,
+                    "Student.Subscriptions",
+                    "Já existe assinaturas ativas para esse aluno")
+            );
         }
         public void DeleteStudent()
         {

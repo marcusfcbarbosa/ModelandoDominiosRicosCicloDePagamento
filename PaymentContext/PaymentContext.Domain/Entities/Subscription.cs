@@ -3,10 +3,12 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using PaymentContext.Domain.ValueObjects;
+using Flunt.Validations;
+using PaymentContext.Shared.Entities;
 
 namespace PaymentContext.Domain.Entities
 {
-    public class Subscription
+    public class Subscription : Entity
     {
         protected Subscription() { }
         public bool Active { get; private set; }
@@ -21,15 +23,16 @@ namespace PaymentContext.Domain.Entities
                 return this._payments.ToArray();
             }
         }
-
         public Payment AddPayment(Payment payment)
         {
-            if (!this.Payments.Any(x => x.PaymentIdentifier == payment.PaymentIdentifier))
-            {
+            AddNotifications(new Contract()
+            .Requires()
+            .IsGreaterThan(DateTime.Now, payment.PaidDate, "Subscription._payments", "A data de pagamento deve ser futura"));
+
+            if (Valid)
                 this._payments.Add(payment);
-                return payment;
-            }
-            return null;
+
+            return payment;
         }
         public Subscription(bool active = true)
         {

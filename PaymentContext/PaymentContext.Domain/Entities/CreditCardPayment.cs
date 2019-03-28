@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using PaymentContext.Domain.ValueObjects;
+using Flunt.Validations;
 namespace PaymentContext.Domain.Entities
 {
     public class CreditCardPayment : Payment
