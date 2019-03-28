@@ -13,7 +13,7 @@ namespace PaymentContext.Domain.Entities
         DateTime expireDate, decimal total, decimal totalPaid,
          Address address, Document document, string owner, Email email)
         {
-            PaymentIdentifier = Guid.NewGuid();
+            Number = Guid.NewGuid().ToString();
             PaidDate = paidDate;
             LastUpdate = lastUpdate;
             ExpireDate = expireDate;
@@ -29,7 +29,7 @@ namespace PaymentContext.Domain.Entities
             );
         }
         
-        public Guid PaymentIdentifier { get; private set; }
+        public String Number { get; private set; }
         public DateTime PaidDate { get; private set; }
         public DateTime? LastUpdate { get; private set; }
         public DateTime ExpireDate { get; private set; }

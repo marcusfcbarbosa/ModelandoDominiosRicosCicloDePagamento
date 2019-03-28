@@ -7,8 +7,8 @@ namespace PaymentContext.Domain.Entities
 {
     public class PayPalPayment : Payment
     {
-        public string LastTranscationCode { get; private set; }
-        public PayPalPayment(string lastTranscationCode,
+        public string TranscationCode { get; private set; }
+        public PayPalPayment(string transcationCode,
 
             DateTime paidDate, DateTime? lastUpdate,
             DateTime expireDate, decimal total, decimal totalPaid,
@@ -17,7 +17,7 @@ namespace PaymentContext.Domain.Entities
          total, totalPaid, address,
          document, owner, email)
         {
-            this.LastTranscationCode = lastTranscationCode;
+            this.TranscationCode = transcationCode;
         }
     }
 }
