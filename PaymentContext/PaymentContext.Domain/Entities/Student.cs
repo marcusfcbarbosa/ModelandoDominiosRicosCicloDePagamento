@@ -47,8 +47,6 @@ namespace PaymentContext.Domain.Entities
                 return this._subscriptions.ToArray();
             }
         }
-
-
         public void AddSubscription(Subscription subscription)
         {
             this.Subscriptions.ToList().ForEach(item =>
@@ -57,7 +55,6 @@ namespace PaymentContext.Domain.Entities
                 });
             this._subscriptions.Add(subscription);
         }
-
         public void DeleteStudent()
         {
             this.Status = false;

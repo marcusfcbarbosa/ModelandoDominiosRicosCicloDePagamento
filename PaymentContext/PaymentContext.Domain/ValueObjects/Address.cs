@@ -1,5 +1,6 @@
 using System;
 using PaymentContext.Shared.ValueObjects;
+using Flunt.Validations;
 
 namespace PaymentContext.Domain.ValueObjects
 {
@@ -15,6 +16,28 @@ namespace PaymentContext.Domain.ValueObjects
             State = state;
             Country = country;
             ZipCode = zipCode;
+
+            AddNotifications(new Contract()
+                        .Requires()
+                        .IsNullOrEmpty(ZipCode, "Address.ZipCode", "Cep inválido")
+                        );
+            AddNotifications(new Contract()
+                        .Requires()
+                        .IsNullOrEmpty(Country, "Address.Country", "País inválido")
+            );
+            AddNotifications(new Contract()
+                        .Requires()
+                        .IsNullOrEmpty(State, "Address.State", "Estado inválido")
+            );
+
+            AddNotifications(new Contract()
+                        .Requires()
+                        .IsNullOrEmpty(Street, "Address.Street", "Rua inválido")
+            );
+            AddNotifications(new Contract()
+                        .Requires()
+                        .IsNullOrEmpty(Number, "Address.Number", "Numero inválido")
+            );
         }
 
         public String Street { get; private set; }
