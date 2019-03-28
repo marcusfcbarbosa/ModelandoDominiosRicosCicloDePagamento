@@ -9,12 +9,8 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Name : ValueObject
     {
-        public Name(string firstName,
-                    string lastName)
+        public Name(string firstName,string lastName)
         {
-            FirstName = firstName;
-            LastName = lastName;
-
             AddNotifications(new Contract()
                 .Requires()
                 .IsNullOrEmpty(FirstName, "Name.FirstName", "Nome não esta preenchido")
@@ -27,12 +23,14 @@ namespace PaymentContext.Domain.ValueObjects
 
             AddNotifications(new Contract()
                 .Requires()
-                .HasMaxLen(firstName, 200, "Name.FirstName", "Tamanho de primeiro nome excede tamanho permitido"));
+                .HasMinLen(firstName, 2, "Name.FirstName", "Tamanho de primeiro nome excede tamanho permitido"));
 
             AddNotifications(new Contract()
                 .Requires()
-                .HasMaxLen(LastName, 200, "Name.LastName", "Tamanho de sobrenome excede tamanho permitido"));
+                .HasMinLen(LastName, 2, "Name.LastName", "Tamanho de sobrenome excede tamanho permitido"));
 
+            FirstName = firstName;
+            LastName = lastName;
         }
         public String FirstName { get; private set; }
         public String LastName { get; private set; }

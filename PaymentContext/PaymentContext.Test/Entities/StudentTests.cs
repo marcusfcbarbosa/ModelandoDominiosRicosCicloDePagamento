@@ -27,11 +27,5 @@ namespace PaymentContext.Test.Entities
             student.AddSubscription(subscription);
             Assert.IsTrue(student.Valid);
         }
-
-        // [TestMethod]
-        // public void RetornaErrroQuandoAlunoJaPossuiInscricaoAtiva()
-        // {
-        //     Assert.Fail();
-        // }
     }
 }

@@ -61,9 +61,8 @@ namespace PaymentContext.Domain.Entities
             }
             AddNotifications(new Contract()
                     .Requires()
-                    .IsFalse(hasSubscriptionActive,
-                    "Student.Subscriptions",
-                    "Já existe assinaturas ativas para esse aluno")
+                    .IsFalse(hasSubscriptionActive,"Student.Subscriptions","Já existe assinaturas ativas para esse aluno")
+                    .AreEquals(0, subscription.Payments.Count,"Student.Subscription.Payments","A inscrição deve possuir algum pagamento")
             );
         }
         public void DeleteStudent()

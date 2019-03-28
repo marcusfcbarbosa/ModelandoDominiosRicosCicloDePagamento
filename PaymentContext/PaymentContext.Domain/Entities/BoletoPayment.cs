@@ -19,6 +19,7 @@ namespace PaymentContext.Domain.Entities
             document, owner, email)
 
         {
+            
             this.Barcode = barcode;
             this.BoletoNumber = boletoNumber;
         }

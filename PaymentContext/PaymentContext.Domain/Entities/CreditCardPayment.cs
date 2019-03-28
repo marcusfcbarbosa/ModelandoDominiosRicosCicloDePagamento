@@ -11,7 +11,9 @@ namespace PaymentContext.Domain.Entities
         public string CardHolderName { get; private set; }
         public string CardNumber { get; private set; }
         public string LastTransactionNumber { get; private set; }
-        public CreditCardPayment(string cardHolderName,string cardNumber, string lastTransactionNumber,
+        public CreditCardPayment(string cardHolderName,
+            string cardNumber,
+            string lastTransactionNumber,
 
             DateTime paidDate, DateTime? lastUpdate,
             DateTime expireDate, decimal total, decimal totalPaid,
