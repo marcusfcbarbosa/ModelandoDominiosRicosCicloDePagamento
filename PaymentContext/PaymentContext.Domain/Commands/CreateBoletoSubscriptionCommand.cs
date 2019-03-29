@@ -24,7 +24,7 @@ namespace PaymentContext.Domain.Commands
         public String Number { get; set; }
         public DateTime PaidDate { get; set; }
         public DateTime? LastUpdate { get; set; }
-        public Decimal ExpireDate { get; set; }
+        public DateTime ExpireDate { get; set; }
         public Decimal Total { get; set; }
         public Decimal TotalPaid { get; set; }
 
@@ -48,7 +48,7 @@ namespace PaymentContext.Domain.Commands
         // Propriedades do Address
         public string Owner { get; set; }
         public string PayerEmail { get; set; }
-        public void Validate()
+        public  void Validate()
         {
             //Fail Fast Validation, funciona para as validações que estão no Command
             //Desafoga utilização de BD , para validaçoes primarias

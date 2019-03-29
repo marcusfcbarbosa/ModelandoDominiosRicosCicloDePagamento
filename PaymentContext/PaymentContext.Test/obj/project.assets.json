@@ -5881,23 +5881,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcus.barbosa.ext\\.nuget\\packages\\": {},
+    "C:\\Users\\marcu\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Test\\PaymentContext.Test.csproj",
+      "projectUniqueName": "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Test\\PaymentContext.Test.csproj",
       "projectName": "PaymentContext.Test",
-      "projectPath": "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Test\\PaymentContext.Test.csproj",
-      "packagesPath": "C:\\Users\\marcus.barbosa.ext\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Test\\obj\\",
+      "projectPath": "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Test\\PaymentContext.Test.csproj",
+      "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\marcus.barbosa.ext\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5910,11 +5910,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Domain\\PaymentContext.Domain.csproj": {
-              "projectPath": "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Domain\\PaymentContext.Domain.csproj"
+            "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Domain\\PaymentContext.Domain.csproj": {
+              "projectPath": "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Domain\\PaymentContext.Domain.csproj"
             },
-            "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Shared\\PaymentContext.Shared.csproj": {
-              "projectPath": "C:\\Users\\marcus.barbosa.ext\\Desktop\\ModelandoDominiosRicos\\PaymentContext\\PaymentContext.Shared\\PaymentContext.Shared.csproj"
+            "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Shared\\PaymentContext.Shared.csproj": {
+              "projectPath": "C:\\Users\\marcu\\Desktop\\ModelandoDominiosRicosCicloDePagamento\\ModelandoDominiosRicosCicloDePagamento\\PaymentContext\\PaymentContext.Shared\\PaymentContext.Shared.csproj"
             }
           }
         }

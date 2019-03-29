@@ -1,10 +1,11 @@
 using System;
+using Flunt.Notifications;
 using PaymentContext.Domain.ValueObjects.Enums;
 using PaymentContext.Shared.Commands;
 
 namespace PaymentContext.Domain.Commands
 {
-    public class CreatePayPalSubscriptionCommand
+    public class CreatePayPalSubscriptionCommand: Notifiable, ICommand
     {
         // Value Objects
         public String FirstName { get; set; }
@@ -41,5 +42,10 @@ namespace PaymentContext.Domain.Commands
         // Propriedades do Address
         public string Owner { get; set; }
         public string PayerEmail { get; set; }
+
+        public void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

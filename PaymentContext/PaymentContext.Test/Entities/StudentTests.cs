@@ -10,6 +10,13 @@ namespace PaymentContext.Test.Entities
     [TestClass]
     public class StudentTests
     {
+
+        public StudentTests()
+        {
+
+        }
+
+
         [TestMethod]
         public void RetornaErrroQuandoAlunoJaPossuiInscricaoAtiva()
         {
