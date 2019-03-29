@@ -47,7 +47,6 @@ namespace PaymentContext.Domain.Commands
         // Propriedades do Address
         public string Owner { get; set; }
         public string PayerEmail { get; set; }
-
         public void Validate()
         {
             throw new NotImplementedException();
